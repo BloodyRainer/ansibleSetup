@@ -1,0 +1,12 @@
+# Ansible Playbook for nummer4
+- name: nummer4 setup with ansible
+  hosts: nummer4
+  roles:
+    - chrome
+    - teamviewer
+    - apt
+    - docker
+    - gc
+    - golang
+    - misc
+    - bashrc

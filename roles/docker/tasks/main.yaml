@@ -1,0 +1,22 @@
+# Install Docker
+- name: Add Dockers official GPG key
+  shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+  tags: docker
+
+- name: Add Docker stable repository
+  command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable"
+  tags: docker
+
+- name: Install docker-ce with apt
+  apt: 
+    name: docker-ce
+    state: present
+    update_cache: yes
+  tags: docker
+  
+- name: adding nummer4 user to group docker
+  user: 
+    name: nummer4
+    groups: docker
+    append: yes
+  tags: docker

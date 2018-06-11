@@ -1,0 +1,40 @@
+# Install Golang
+- name: Download Go 1.10.3
+  get_url:
+    url: https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
+    dest: ~/Downloads/go1.10.3.linux-amd64.tar.gz
+  tags: golang
+
+- name: Remove old Go installation
+  file:
+    path: /usr/local/go
+    state: absent
+  tags: golang
+
+- name: extract Go 
+  unarchive:
+    src: ~/Downloads/go1.10.3.linux-amd64.tar.gz
+    dest: /usr/local
+    copy: no
+  tags: golang
+
+- name: Remove Go Download
+  file:
+    path: ~/Downloads/go1.10.3.linux-amd64.tar.gz
+    state: absent
+  tags: golang
+
+- name: set GOPATH
+  lineinfile:
+    path: ~/.bashrc
+    line: "export GOPATH=~/go"
+  tags: golang
+  
+- name: /usr/local/go/bin to PATH
+  lineinfile:
+    path: ~/.bashrc
+    line: "export PATH=$PATH:/usr/local/go/bin"
+  tags: golang
+
+
+

@@ -1,0 +1,4 @@
+#Ansible Invetory File
+
+[all]
+nummer4 ansible_connection=local
