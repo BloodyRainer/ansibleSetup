@@ -4,7 +4,7 @@
   tags: docker
 
 - name: Add Docker stable repository
-  command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable"
+  command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
   tags: docker
 
 - name: Install docker-ce with apt

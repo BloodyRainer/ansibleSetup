@@ -11,6 +11,12 @@
     dest: ~/Downloads/zsh-install.sh
   tags: ohmyzsh
 
-- name: Execute install script
+- name: Execute ohmyzsh install script
   script: ~/Downloads/zsh-install.sh
+  tags: ohmyzsh
+
+- name: Remove ohmyzsh install script
+  file:
+    path: ~/Downloads/zsh-install.sh
+    state: absent
   tags: ohmyzsh
