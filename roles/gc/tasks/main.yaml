@@ -5,7 +5,7 @@
 
 - name: "apt | ensure Google Cloud repo present"
   apt_repository:
-    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-artful main" # "artful" is the result of "echo $(lsb_release -cs)"
+    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-{{ ansible_distribution_release }} main"
     state: present
     update_cache: yes
   tags: gc

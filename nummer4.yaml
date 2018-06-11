@@ -2,11 +2,14 @@
 - name: nummer4 setup with ansible
   hosts: nummer4
   roles:
+    - debug
+    - ohmyzsh
     - chrome
     - teamviewer
     - apt
     - docker
     - gc
     - golang
+    - virtualbox
     - misc
     - bashrc

@@ -1,0 +1,16 @@
+# Install oh-my-zsh, to activate you have to run 'chsh -s $(which zsh)' manually
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+  tags: ohmyzsh
+
+- name: Download zsh install script
+  get_url:
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: ~/Downloads/zsh-install.sh
+  tags: ohmyzsh
+
+- name: Execute install script
+  script: ~/Downloads/zsh-install.sh
+  tags: ohmyzsh

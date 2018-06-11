@@ -1,0 +1,4 @@
+# Print Debug Information
+- debug:
+    msg: "Distribution: '{{ ansible_distribution }}', Release: '{{ ansible_distribution_release }}'"
+  tags: debug
