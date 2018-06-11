@@ -24,15 +24,27 @@
     state: absent
   tags: golang
 
-- name: set GOPATH
+- name: bashrc | set GOPATH 
   lineinfile:
     path: ~/.bashrc
     line: "export GOPATH=~/go"
   tags: golang
   
-- name: /usr/local/go/bin to PATH
+- name: bashrc | /usr/local/go/bin to PATH
   lineinfile:
     path: ~/.bashrc
+    line: "export PATH=$PATH:/usr/local/go/bin"
+  tags: golang
+
+- name: zshrc | set GOPATH
+  lineinfile:
+    path: ~/.zshrc
+    line: "export GOPATH=~/go"
+  tags: golang
+  
+- name: zshrc | /usr/local/go/bin to PATH
+  lineinfile:
+    path: ~/.zshrc
     line: "export PATH=$PATH:/usr/local/go/bin"
   tags: golang
 

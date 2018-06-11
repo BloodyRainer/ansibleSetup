@@ -8,10 +8,6 @@
     - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
   tags: virtualbox
 
-# - name: Add Oracle key
-#   shell: "wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -"
-#   tags: virtualbox
-
 - name: "apt | ensure Virtualbox repo present"
   apt_repository:
     repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"

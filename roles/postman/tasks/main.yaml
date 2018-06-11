@@ -1,0 +1,23 @@
+# Install Postman
+- name: Download Postman archive
+  get_url:
+    url: https://dl.pstmn.io/download/latest/linux64
+    dest: ~/Downloads/postman.tar.gz
+  tags: postman
+
+- name: extract Postman 
+  unarchive:
+    src: ~/Downloads/postman.tar.gz
+    dest: /opt
+    copy: no
+  tags: postman
+
+- name: link to postman
+  command: ln -s /opt/Postman/Postman /usr/bin/postman
+  tags: postman
+
+- name: Remove Postman archive
+  file:
+    path: ~/Downloads/postman.tar.gz
+    state: absent
+  tags: postman

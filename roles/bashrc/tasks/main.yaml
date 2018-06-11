@@ -1,5 +1,0 @@
-# Modify .bashrc
-- name: First line
-  lineinfile:
-    path: ~/.bashrc
-    line: "# Inserted by ansible_nummer4_setup"

@@ -12,7 +12,11 @@
 
 - name: Install Google Cloud SDK with apt
   apt: 
-    name: "google-cloud-sdk"
+    name: "{{ item }}"
     state: present
     update_cache: yes
+  with_items:
+  - google-cloud-sdk
+  - google-cloud-sdk-app-engine-python
+  - google-cloud-sdk-app-engine-go
   tags: gc
