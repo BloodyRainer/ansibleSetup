@@ -3,10 +3,10 @@
   hosts: nummer4
   roles:
     - debug
+    - apt
     - ohmyzsh
     - chrome
-    - teamviewer
-    - apt
+    - teamviewer 
     - docker
     - gc
     - golang
