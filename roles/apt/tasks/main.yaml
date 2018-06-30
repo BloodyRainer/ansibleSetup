@@ -25,4 +25,5 @@
     - curl
     - software-properties-common
     - htop
+    - vlc
   tags: apt
